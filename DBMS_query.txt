@@ -1,1 +1,13 @@
+Table creation :
+----------------
 create table sports_list(id serial primary key,name varchar(20),sport varchar(20));
+
+Procedure creation:
+----------------------
+CREATE OR REPLACE PROCEDURE insert_sport(p_name VARCHAR, p_sport VARCHAR)
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    INSERT INTO public.sports_list (name, sport) VALUES (p_name, p_sport);
+END;
+$$;
